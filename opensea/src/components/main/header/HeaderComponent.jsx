@@ -7,7 +7,7 @@ import { ReactComponent as UserProfile } from "./icon/user-regular.svg";
 import { VscBrowser } from "react-icons/vsc";
 import { ReactComponent as Cart } from "./icon/cart-shopping-solid.svg";
 
-export default function HeaderComponent() {
+export default function HeaderComponent({ setDisplay }) {
   return (
     <MainBar>
       <MainBarLogo>
@@ -23,7 +23,19 @@ export default function HeaderComponent() {
       </SearchBarBox>
       <DropDownBox>
         <DropDownMenu>
-          <li>Explore</li>
+          <div className="test">
+            <li
+              onMouseEnter={() => {
+                setDisplay(true);
+              }}
+              onMouseOut={() => {
+                setDisplay(false);
+              }}
+            >
+              Explore
+            </li>
+          </div>
+
           <li>Drops</li>
           <li>Stats</li>
           <li>Resources</li>
@@ -104,4 +116,6 @@ const DropDownMenu = styled.ul`
   padding: 0 0px;
   list-style: none;
   font-weight: 800;
+  .Explore {
+  }
 `;
