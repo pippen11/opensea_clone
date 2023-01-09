@@ -61,7 +61,8 @@ const DropDownExploreBox = styled.div`
   width: 200px;
   border: 1px solid lightgray;
   border-radius: 10px;
-  margin-left: 1200px;
+  position: absolute;
+  margin-top: 30px;
 `;
 
 const Nft = styled.div`

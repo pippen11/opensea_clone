@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 // import { ReactComponent as Iconone } from "./icon/magnifying-glass-solid.svg";
 //이렇게 컴포넌트로사용가능
 import searchicon from "./icon/magnifying-glass-solid.svg";
@@ -6,8 +7,10 @@ import { ReactComponent as UserProfile } from "./icon/user-regular.svg";
 // import { ReactComponent as Wallet } from "./icon/wallet-solid.svg";
 import { VscBrowser } from "react-icons/vsc";
 import { ReactComponent as Cart } from "./icon/cart-shopping-solid.svg";
+import DropDownContainer from "./dropdown/DropDownContainer";
 
-export default function HeaderComponent({ setDisplay }) {
+export default function HeaderComponent({}) {
+  const [display, setDisplay] = useState(false);
   return (
     <MainBar>
       <MainBarLogo>
@@ -24,7 +27,7 @@ export default function HeaderComponent({ setDisplay }) {
       <DropDownBox>
         <DropDownMenu>
           <div className="test">
-            <li
+            <Exploreli
               onMouseEnter={() => {
                 setDisplay(true);
               }}
@@ -33,7 +36,8 @@ export default function HeaderComponent({ setDisplay }) {
               }}
             >
               Explore
-            </li>
+              {display ? <DropDownContainer></DropDownContainer> : <></>}
+            </Exploreli>
           </div>
 
           <li>Drops</li>
@@ -53,6 +57,8 @@ export default function HeaderComponent({ setDisplay }) {
     </MainBar>
   );
 }
+const Exploreli = styled.li``;
+
 const ImgPosition = styled.div`
   position: fixed;
 
@@ -116,6 +122,6 @@ const DropDownMenu = styled.ul`
   padding: 0 0px;
   list-style: none;
   font-weight: 800;
-  .Explore {
+  .test {
   }
 `;
