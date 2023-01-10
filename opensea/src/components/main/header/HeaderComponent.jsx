@@ -8,9 +8,13 @@ import { ReactComponent as UserProfile } from "./icon/user-regular.svg";
 import { VscBrowser } from "react-icons/vsc";
 import { ReactComponent as Cart } from "./icon/cart-shopping-solid.svg";
 import DropDownContainer from "./dropdown/DropDownContainer";
+import DropDownConctainertwo from "./dropdown/DropDownComponenttwo";
+import DropDownContainerthree from "./dropdown/DropDownComponentthree";
 
 export default function HeaderComponent({}) {
   const [display, setDisplay] = useState(false);
+  const [displaytwo, setDisplaytwo] = useState(false);
+  const [displaythree, setDisplaythree] = useState(false);
   return (
     <MainBar>
       <MainBarLogo>
@@ -40,8 +44,36 @@ export default function HeaderComponent({}) {
             </Exploreli>
           </div>
 
-          <li>Drops</li>
-          <li>Stats</li>
+          <li
+            onClick={() => {
+              setDisplaytwo(true);
+              if (displaytwo == true) {
+                setDisplaytwo(false);
+              }
+            }}
+          >
+            Drops
+            {displaytwo ? (
+              <DropDownConctainertwo></DropDownConctainertwo>
+            ) : (
+              <></>
+            )}
+          </li>
+          <li
+            onClick={() => {
+              setDisplaythree(true);
+              if (displaythree == true) {
+                setDisplaythree(false);
+              }
+            }}
+          >
+            Stats
+            {displaythree ? (
+              <DropDownContainerthree></DropDownContainerthree>
+            ) : (
+              <></>
+            )}
+          </li>
           <li>Resources</li>
           <li>
             <UserProfile width="20" />
