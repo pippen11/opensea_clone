@@ -46,11 +46,11 @@ export default function HeaderComponent({}) {
           </div>
 
           <li
-            onClick={() => {
+            onMouseEnter={() => {
               setDisplaytwo(true);
-              if (displaytwo == true) {
-                setDisplaytwo(false);
-              }
+            }}
+            onMouseOut={() => {
+              setDisplaytwo(false);
             }}
           >
             Drops
@@ -61,12 +61,12 @@ export default function HeaderComponent({}) {
             )}
           </li>
           <li
-            onClick={() => {
-              setDisplaythree(true);
-              if (displaythree == true) {
-                setDisplaythree(false);
-              }
-            }}
+          // onMouseEnter={() => {
+          //   setDisplaythree(true);
+          //  }} {
+          //     setDisplaythree(false);
+          //   }
+          // }}
           >
             Stats
             {displaythree ? (

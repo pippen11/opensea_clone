@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function TitleComponent() {
   return (
     <TitleWidth>
-      <TitleName>Explore,collect,and sell NFTs</TitleName>
+      <TitleName></TitleName>
     </TitleWidth>
   );
 }
